@@ -1,0 +1,70 @@
+{
+  "general": {
+    "navbar": {
+      "name": "Concentration Tests",
+      "home": "Home",
+      "ctweber": "CT Weber",
+      "simplemaths": "Mental Calculation",
+      "wordsbackwards": "Words Backwards"
+    }
+  },
+  "ctweber": {
+    "title": "CT Weber",
+    "instructions_1": "Specify the number of images to show and the duration to show each images.",
+    "instructions_2": "When an images is shown, press either \"1\" or \"0\" on your keyboard.",
+    "instructions_3": "If your decision was correct, you get a point.",
+    "instructions_4": "Only the first key you press per image is counted.",
+    "instructions_5": "More about the test: https://en.wikipedia.org/wiki/Frankfurt_Adaptive_Concentration_Test",
+    "rounds": "Rounds",
+    "time_between_rounds": "Duration per image (in milliseconds)",
+    "total_time": "Your test will take a total of {seconds} seconds.",
+    "show_images": "Show images on the sides",
+    "play_audio": "Give audio feedback",
+    "show_remaining": "Show number of remaining images",
+    "start": "Start",
+    "stop": "Stop",
+    "score": "Score",
+    "remaining": "remaining",
+    "start_in": "Begin in {time} seconds",
+    "historical_score": "Past scores"
+  },
+  "simplemaths": {
+    "title": "Mental Calculation",
+    "instructions_1": "Specify how many rounds you want to play and how many expressions should be displayed at once in each round.",
+    "instructions_2": "In addition, specify how many addends each expression should consist of and how large the individual addends may be at most.",
+    "instructions_3": "For each correctly solved expression you get one point.",
+    "instructions_4": "The time is tracked in the background. With the tab key you can quickly switch through the individual expressions.",
+    "rounds": "Rounds",
+    "terms_per_round": "Expressions per round",
+    "numbers_per_term": "Addends per expression",
+    "highest_number": "Greatest addend",
+    "total_terms": "The test will have {terms} expressions in total.",
+    "show_remaining": "Show number of remaining rounds",
+    "start": "Start",
+    "stop": "Stop",
+    "next": "Next",
+    "score": "Score",
+    "remaining": "remaining",
+    "start_in": "Begin in {time} seconds",
+    "historical_score": "Past scores"
+  },
+  "wordsbackwards": {
+    "title": "Words Backwards",
+    "instructions_1": "Specify how many words to display and the maximum length of each word.",
+    "instructions_2": "When a word appears, type it backwards into the input field and press \"Next\" or the Enter key.",
+    "instructions_3": "For each word spelled exactly right backwards, you get one point.",
+    "instructions_4": "The time is tracked in the background.",
+    "rounds": "Rounds",
+    "max_characters": "Maximum number of letters per word",
+    "time_per_word": "Time per word",
+    "check_case": "Case-sensitive check",
+    "show_remaining": "Show number of remaining words",
+    "start": "Start",
+    "stop": "Stop",
+    "next": "Next",
+    "score": "Score",
+    "remaining": "remaining",
+    "start_in": "Begin in {time} seconds",
+    "historical_score": "Past scores"
+  }
+}

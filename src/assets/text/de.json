@@ -1,0 +1,70 @@
+{
+  "general": {
+    "navbar": {
+      "name": "Konzentrationstests",
+      "home": "Start",
+      "ctweber": "CT Weber",
+      "simplemaths": "Kopfrechnen",
+      "wordsbackwards": "Wörter rückwärts"
+    }
+  },
+  "ctweber": {
+    "title": "CT Weber",
+    "instructions_1": "Gib an, wie viele Symbole angezeigt werden sollen und wie lange jedes Symbol maximal angezeigt werden soll.",
+    "instructions_2": "Wenn ein Bild erscheint, drück entweder die Taste \"1\" oder \"0\" auf deiner Tastatur.",
+    "instructions_3": "Wenn du richtig entschieden hast, bekommst du einen Punkt.",
+    "instructions_4": "Es wird immer die erste gedrückte Taste pro Symbol gezählt.",
+    "instructions_5": "Mehr zum Test: https://de.wikipedia.org/wiki/Frankfurter_Adaptiver_Konzentrationsleistungs-Test",
+    "rounds": "Durchgänge",
+    "time_between_rounds": "Zeit pro Symbol (in Millisekunden)",
+    "total_time": "Der Test wird insgesamt {seconds} Sekunden dauern.",
+    "show_images": "Symbole an den Seiten zeigen",
+    "play_audio": "Audio-Feedback geben",
+    "show_remaining": "Anzahl der verbleibenden Symbole anzeigen",
+    "start": "Start",
+    "stop": "Stop",
+    "score": "Punkte",
+    "remaining": "verbleibend",
+    "start_in": "Beginn in {time} Sekunden",
+    "historical_score": "Vergangene Punkte"
+  },
+  "simplemaths": {
+    "title": "Kopfrechnen",
+    "instructions_1": "Gib an, wie viele Durchgänge zu spielen möchtest und wie viele Terme in jedem Durchgang auf einmal angezeigt werden sollen.",
+    "instructions_2": "Gib zusätzlich an, aus wie vielen Zahlen jeder Term bestehen soll und wie groß die einzelnen Summanden höchstens sein dürfen.",
+    "instructions_3": "Für jeden richtig gelösten Term bekommst du einen Punkt.",
+    "instructions_4": "Im Hintergrund wird die Zeit gestoppt. Mit der Tab-Taste kannst du schnell durch die einzelnen Terme schalten.",
+    "rounds": "Durchgänge",
+    "terms_per_round": "Terme pro Durchgang",
+    "numbers_per_term": "Summanden pro Term",
+    "highest_number": "Höchster Summand",
+    "total_terms": "Der Test wird insgesamt {terms} Terme haben.",
+    "show_remaining": "Anzahl der verbleibenden Durchgänge anzeigen",
+    "start": "Start",
+    "stop": "Stop",
+    "next": "Weiter",
+    "score": "Punkte",
+    "remaining": "verbleibend",
+    "start_in": "Beginn in {time} Sekunden",
+    "historical_score": "Vergangene Punkte"
+  },
+  "wordsbackwards": {
+    "title": "Wörter rückwärts",
+    "instructions_1": "Gib an, wie viele Wörter angezeigt werden sollen und wie lange jedes Wort maximal sein darf.",
+    "instructions_2": "Wenn ein Wort erscheint, tippe es rückwärts in das Eingabefeld ein und drücke \"Weiter\" oder die Enter-Taste.",
+    "instructions_3": "Für jedes genau richtig rückwärts geschriebene Wort bekommst du einen Punkt.",
+    "instructions_4": "Im Hintergrund wird die Zeit gestoppt.",
+    "rounds": "Durchgänge",
+    "max_characters": "Maximale Buchstabenanzahl pro Wort",
+    "time_per_word": "Zeit pro Wort",
+    "check_case": "Großschreibung prüfen",
+    "show_remaining": "Anzahl der verbleibenden Wörter anzeigen",
+    "start": "Start",
+    "stop": "Stop",
+    "next": "Weiter",
+    "score": "Punkte",
+    "remaining": "verbleibend",
+    "start_in": "Beginn in {time} Sekunden",
+    "historical_score": "Vergangene Punkte"
+  }
+}
