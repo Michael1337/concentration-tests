@@ -1,82 +1,82 @@
 <template>
   <h1>{{ $t('ctweber.title') }}</h1>
   <p>
-    {{ $t('ctweber.instructions_1') }}<br />
-    {{ $t('ctweber.instructions_2') }}<br />
-    {{ $t('ctweber.instructions_3') }}<br />
-    {{ $t('ctweber.instructions_4') }}<br />
-    {{ $t('ctweber.instructions_5') }}<br />
+    {{ $t('ctweber.instructions_1') }}<br/>
+    {{ $t('ctweber.instructions_2') }}<br/>
+    {{ $t('ctweber.instructions_3') }}<br/>
+    {{ $t('ctweber.instructions_4') }}<br/>
+    {{ $t('ctweber.instructions_5') }}<br/>
   </p>
 
   <form class="row g-1">
     <div class="col-md-4">
       <label
-        for="inputRounds"
-        class="col-form-label"
+          for="inputRounds"
+          class="col-form-label"
       >{{ $t('ctweber.rounds') }}</label>
 
       <input
-        id="inputRounds"
-        v-model="rounds"
-        type="number"
-        class="form-control"
+          id="inputRounds"
+          v-model="rounds"
+          type="number"
+          class="form-control"
       />
     </div>
     <div class="col-md-8">
       <label
-        for="inputTime"
-        class="col-form-label"
+          for="inputTime"
+          class="col-form-label"
       >{{ $t('ctweber.time_between_rounds') }}</label>
       <input
-        id="inputTime"
-        v-model="timeBetweenRounds"
-        type="number"
-        step="10"
-        class="form-control"
+          id="inputTime"
+          v-model="timeBetweenRounds"
+          type="number"
+          step="10"
+          class="form-control"
       />
     </div>
-    <span>{{ $t('ctweber.total_time', { seconds: totalTime }) }}</span>
+    <span>{{ $t('ctweber.total_time', {seconds: totalTime}) }}</span>
 
 
-    <br />
+    <br/>
     <div class="form-check form-switch">
       <input
-        id="checkShowImages"
-        v-model="showImages"
-        class="form-check-input"
-        type="checkbox"
+          id="checkShowImages"
+          v-model="showImages"
+          class="form-check-input"
+          type="checkbox"
       />
       <label
-        class="form-check-label"
-        for="checkShowImages"
+          class="form-check-label"
+          for="checkShowImages"
       >
         {{ $t('ctweber.show_images') }}
       </label>
     </div>
     <div class="form-check form-switch">
       <input
-        id="checkPlaySound"
-        v-model="playSound"
-        class="form-check-input"
-        type="checkbox"
+          id="checkPlaySound"
+          v-model="playSound"
+          class="form-check-input"
+          type="checkbox"
       />
       <label
-        class="form-check-label"
-        for="checkPlaySound"
+          class="form-check-label"
+          for="checkPlaySound"
       >
         {{ $t('ctweber.play_audio') }}
       </label>
     </div>
     <div class="form-check form-switch">
       <input
-        id="checkShowRemaining"
-        v-model="showRemaining"
-        class="form-check-input"
-        type="checkbox"
+          id="checkShowRemaining"
+          v-model="showRemaining"
+          class="form-check-input"
+          type="checkbox"
       />
       <label
-        class="form-check-label"
-        for="checkShowRemaining"
+          class="form-check-label"
+          for="checkShowRemaining"
       >
         {{ $t('ctweber.show_remaining') }}
       </label>
@@ -84,11 +84,11 @@
 
     <div class="col-md-4">
       <button
-        type="button"
-        class="btn w-100"
-        :class="interval===0?'btn-primary':'btn-secondary'"
-        :disabled="gameStarting"
-        @click="startStop"
+          type="button"
+          class="btn w-100"
+          :class="interval===0?'btn-primary':'btn-secondary'"
+          :disabled="gameStarting"
+          @click="startStop"
       >
         {{ interval === 0 ? $t('ctweber.start') : $t('ctweber.stop') }}
       </button>
@@ -97,87 +97,87 @@
 
   <div class="row g-1">
     <div class="text-center">
-      <span>{{ $t('ctweber.score') }}: {{ getScoreFraction(score, rounds) }}</span><br />
+      <span>{{ $t('ctweber.score') }}: {{ getScoreFraction(score, rounds) }}</span><br/>
       <span
-        v-if="showRemaining"
-        class="remaining-rounds"
+          v-if="showRemaining"
+          class="remaining-rounds"
       >{{ rounds - currentRound }} {{ $t('ctweber.remaining') }}</span>
     </div>
     <div class="col-1 col-md-3 col-lg-4 icon-col icon-col--left">
       1
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/1/p1.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/1/p1.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/1/p2.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/1/p2.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/1/p3.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/1/p3.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/1/p4.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/1/p4.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/1/p5.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/1/p5.gif"
+          :alt="$t('ctweber.symbol')"
       />
     </div>
     <div class="col-10 col-md-6 col-lg-4 icon-main game-plane">
       <img
-        v-if="!currentVoted && interval!==0"
-        :src="'/src/assets/img/ctweber/'+currentSide+'/p'+currentImage+'.gif'"
-        :alt="$t('ctweber.current_symbol')"
+          v-if="!currentVoted && interval!==0"
+          :src="current_image_url"
+          :alt="$t('ctweber.current_symbol')"
       />
       <div v-if="interval===0">
-        {{ $t('ctweber.start_in', { time: startCountdown / 1000 }) }}
+        {{ $t('ctweber.start_in', {time: startCountdown / 1000}) }}
       </div>
     </div>
     <div class="col-1 col-md-3 col-lg-4 icon-col icon-col--right">
       0
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/0/p1.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/0/p1.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/0/p2.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/0/p2.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/0/p3.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/0/p3.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/0/p4.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/0/p4.gif"
+          :alt="$t('ctweber.symbol')"
       />
       <img
-        v-if="showImages"
-        src="../assets/img/ctweber/0/p5.gif"
-        :alt="$t('ctweber.symbol')"
+          v-if="showImages"
+          src="../assets/img/ctweber/0/p5.gif"
+          :alt="$t('ctweber.symbol')"
       />
     </div>
     <div
-      id="history"
-      class="col-12 text-center"
+        id="history"
+        class="col-12 text-center"
     >
-      <span>{{ $t('ctweber.historical_score') }}:</span><br />
+      <span>{{ $t('ctweber.historical_score') }}:</span><br/>
       <span
-        v-for="(historical_score, index) in historical_scores.slice().reverse()"
-        :key="index"
-      >{{ $t('ctweber.score') }}: {{ getScoreFraction(historical_score.score, historical_score.rounds) }}<br /></span>
+          v-for="(historical_score, index) in historical_scores.slice().reverse()"
+          :key="index"
+      >{{ $t('ctweber.score') }}: {{ getScoreFraction(historical_score.score, historical_score.rounds) }}<br/></span>
     </div>
   </div>
 </template>
@@ -202,13 +202,16 @@ export default defineComponent({
       showImages: true, // if the player wants to see all images at the side of the game plane
       playSound: true, // if the player wants to get audio feedback
       showRemaining: true, // if the player wants to see how many more rounds are to be played this game
-      correctSound: new Audio('/src/assets/sound/ctweber/correct.ogg'),
-      incorrectSound: new Audio('/src/assets/sound/ctweber/incorrect.ogg'),
+      correctSound: new Audio(new URL('/src/assets/sound/ctweber/correct.ogg', import.meta.url).href),
+      incorrectSound: new Audio(new URL('/src/assets/sound/ctweber/incorrect.ogg', import.meta.url).href),
     };
   },
   computed: {
     totalTime(): number {
       return Number(this.rounds * this.timeBetweenRounds) / 1000;
+    },
+    current_image_url(): URL {
+      return new URL(`/src/assets/img/ctweber/${this.currentSide}/p${this.currentImage}.gif`, import.meta.url);
     }
   },
   unmounted: function () {
@@ -224,6 +227,9 @@ export default defineComponent({
       if (correct) this.score++;
 
       if (this.playSound) {
+
+        // const correctSound = new Audio('@/assets/sound/ctweber/correct.ogg');
+        // const incorrectSound = new Audio('@/assets/sound/ctweber/incorrect.ogg');
         correct ? this.correctSound.play() : this.incorrectSound.play();
       }
     },
