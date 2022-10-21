@@ -1,9 +1,6 @@
 # Choose the Image which has Node installed already
 FROM node:lts-alpine
 
-# install simple http server for serving static content
-RUN npm install -g http-server
-
 # make the 'app' folder the current working directory
 WORKDIR /app
 
@@ -19,5 +16,14 @@ COPY . .
 # build app for production with minification
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+FROM nginx:1.19.1-alpine
+
+COPY /app/dist /usr/share/nginx/html
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY nginx/nginx.conf /etc/nginx/conf.d
+
+EXPOSE 80
+
+CMD [ "nginx", "-g", "daemon off;" ]
