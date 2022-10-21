@@ -134,7 +134,7 @@
     <div class="col-10 col-md-6 col-lg-4 icon-main game-plane">
       <img
         v-if="!currentVoted && interval!==0"
-        :src="current_image_url"
+        :src="current_image"
         :alt="$t('ctweber.current_symbol')"
       />
       <div v-if="interval===0">
@@ -184,6 +184,23 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
+import correct_sound from "@/assets/sound/ctweber/correct.ogg";
+import incorrect_sound from "@/assets/sound/ctweber/incorrect.ogg";
+
+//see: https://github.com/ElMassimo/vite-plugin-image-presets/discussions/6
+import image_0_1 from "@/assets/img/ctweber/0/p1.gif";
+import image_0_2 from "@/assets/img/ctweber/0/p2.gif";
+import image_0_3 from "@/assets/img/ctweber/0/p3.gif";
+import image_0_4 from "@/assets/img/ctweber/0/p4.gif";
+import image_0_5 from "@/assets/img/ctweber/0/p5.gif";
+import image_1_1 from "@/assets/img/ctweber/1/p1.gif";
+import image_1_2 from "@/assets/img/ctweber/1/p2.gif";
+import image_1_3 from "@/assets/img/ctweber/1/p3.gif";
+import image_1_4 from "@/assets/img/ctweber/1/p4.gif";
+import image_1_5 from "@/assets/img/ctweber/1/p5.gif";
+
+const symbols = [[image_0_1, image_0_2, image_0_3, image_0_4, image_0_5],
+  [image_1_1, image_1_2, image_1_3, image_1_4, image_1_5]]
 
 export default defineComponent({
   data() {
@@ -202,16 +219,16 @@ export default defineComponent({
       showImages: true, // if the player wants to see all images at the side of the game plane
       playSound: true, // if the player wants to get audio feedback
       showRemaining: true, // if the player wants to see how many more rounds are to be played this game
-      correctSound: new Audio(new URL('/src/assets/sound/ctweber/correct.ogg', import.meta.url).href),
-      incorrectSound: new Audio(new URL('/src/assets/sound/ctweber/incorrect.ogg', import.meta.url).href),
+      correctSound: new Audio(correct_sound),
+      incorrectSound: new Audio(incorrect_sound),
     };
   },
   computed: {
     totalTime(): number {
       return Number(this.rounds * this.timeBetweenRounds) / 1000;
     },
-    current_image_url(): string {
-      return new URL(`/src/assets/img/ctweber/${this.currentSide}/p${this.currentImage}.gif`, import.meta.url).href;
+    current_image(): any {
+      return symbols[this.currentSide][this.currentImage];
     }
   },
   unmounted: function () {
@@ -227,9 +244,6 @@ export default defineComponent({
       if (correct) this.score++;
 
       if (this.playSound) {
-
-        // const correctSound = new Audio('@/assets/sound/ctweber/correct.ogg');
-        // const incorrectSound = new Audio('@/assets/sound/ctweber/incorrect.ogg');
         correct ? this.correctSound.play() : this.incorrectSound.play();
       }
     },
@@ -239,7 +253,7 @@ export default defineComponent({
     nextRound() {
       this.currentVoted = false;
       this.currentSide = Math.round(Math.random());
-      this.currentImage = Math.floor(Math.random() * 5) + 1;
+      this.currentImage = Math.floor(Math.random() * 5);
       if (this.currentRound >= this.rounds) {
         this.stop();
       } else {
