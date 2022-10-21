@@ -1,12 +1,23 @@
 {
   "general": {
+    "title": "Konzentrationstests",
+    "description": "Tests zur Verbesserung und Überprüfung der Konzentration und des Gedächtnisses.",
     "navbar": {
       "name": "Konzentrationstests",
       "home": "Start",
       "ctweber": "CT Weber",
       "simplemaths": "Kopfrechnen",
       "wordsbackwards": "Wörter rückwärts"
-    }
+    },
+    "toggle_navigation": "Navigation umschalten"
+  },
+  "home": {
+    "title": "Startseite",
+    "instructions_1": "Hallo! Ich habe auf dieser Webseite einige Konzentrations- und Gedächtnisübungen zusammengestellt.",
+    "instructions_2": "Die verschiedenen Übungen erreichst du über die Navigation oben.",
+    "instructions_3": "Anfragen jeglicher Art bitte an die E-Mail-Adresse im Impressum:",
+    "legal_notice_url": "https://michweb.de/legal-notice",
+    "legal_notice": "Impressum"
   },
   "ctweber": {
     "title": "CT Weber",
@@ -26,7 +37,9 @@
     "score": "Punkte",
     "remaining": "verbleibend",
     "start_in": "Beginn in {time} Sekunden",
-    "historical_score": "Vergangene Punkte"
+    "historical_score": "Vergangene Punkte",
+    "symbol": "Symbol",
+    "current_symbol": "Aktuelles Symbol"
   },
   "simplemaths": {
     "title": "Kopfrechnen",

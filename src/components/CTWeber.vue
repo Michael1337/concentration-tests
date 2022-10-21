@@ -108,34 +108,34 @@
       <img
         v-if="showImages"
         src="../assets/img/ctweber/1/p1.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/1/p2.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/1/p3.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/1/p4.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/1/p5.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
     </div>
     <div class="col-10 col-md-6 col-lg-4 icon-main game-plane">
       <img
         v-if="!currentVoted && interval!==0"
         :src="'/src/assets/img/ctweber/'+currentSide+'/p'+currentImage+'.gif'"
-        alt="Current Image"
+        :alt="$t('ctweber.current_symbol')"
       />
       <div v-if="interval===0">
         {{ $t('ctweber.start_in', { time: startCountdown / 1000 }) }}
@@ -146,27 +146,27 @@
       <img
         v-if="showImages"
         src="../assets/img/ctweber/0/p1.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/0/p2.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/0/p3.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/0/p4.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
       <img
         v-if="showImages"
         src="../assets/img/ctweber/0/p5.gif"
-        alt="Symbol"
+        :alt="$t('ctweber.symbol')"
       />
     </div>
     <div

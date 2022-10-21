@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import SimpleMaths from "@/components/SimpleMaths.vue";
 export default {
   components: {SimpleMaths}

@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from "@vueuse/head"
 import App from './App.vue'
 import router from './router'
 import { createI18n } from 'vue-i18n'
@@ -17,7 +18,9 @@ const i18n = createI18n({
 })
 
 const app = createApp(App)
+const head = createHead()
 
+app.use(head)
 app.use(router)
 app.use(i18n)
 

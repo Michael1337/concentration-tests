@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import WordsBackwards from "@/components/WordsBackwards.vue";
 export default {
   components: {WordsBackwards}

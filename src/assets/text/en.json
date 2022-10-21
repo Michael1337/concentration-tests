@@ -1,12 +1,23 @@
 {
   "general": {
+    "title": "Concentration Tests",
+    "description": "Tests for improving and checking concentration and memory.",
     "navbar": {
       "name": "Concentration Tests",
       "home": "Home",
       "ctweber": "CT Weber",
       "simplemaths": "Mental Calculation",
       "wordsbackwards": "Words Backwards"
-    }
+    },
+    "toggle_navigation": "Toggle Navigation"
+  },
+  "home": {
+    "title": "Home",
+    "instructions_1": "Hello! I have put together some concentration and memory exercises on this website.",
+    "instructions_2": "You can access the different exercises via the navigation above.",
+    "instructions_3": "Please send inquiries of any kind to the e-mail address in the legal notice:",
+    "legal_notice_url": "https://michweb.de/en/legal-notice",
+    "legal_notice": "Legal Notice"
   },
   "ctweber": {
     "title": "CT Weber",
@@ -26,7 +37,9 @@
     "score": "Score",
     "remaining": "remaining",
     "start_in": "Begin in {time} seconds",
-    "historical_score": "Past scores"
+    "historical_score": "Past scores",
+    "symbol": "Symbol",
+    "current_symbol": "Current symbol"
   },
   "simplemaths": {
     "title": "Mental Calculation",

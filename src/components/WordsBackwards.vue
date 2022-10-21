@@ -102,7 +102,6 @@
     <div class="col-10 col-md-6 col-lg-4 game-plane">
       <div
         v-if="startTime !==0"
-        ref="terms"
       >
         {{ words[currentRound] }} = <input
           ref="input"
@@ -138,7 +137,8 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import {allwords} from "@/assets/text/wordlist_de";
+import {allwords as allwords_de} from "@/assets/text/wordlist_de";
+import {allwords as allwords_en} from "@/assets/text/wordlist_en";
 
 export default defineComponent({
   data() {
@@ -146,9 +146,10 @@ export default defineComponent({
       score: 0, // current/total correct answers
       historical_scores: [] as { "score": number, "words": number, "time": number }[], // history of scores
       max_characters: 9, // how many characters are word can have at the most
-      time_per_word: 1500, // how long to show the word
+      //time_per_word: 1500, // how long to show the word
       rounds: 10, // how many words to show per game
       words: [] as string[],
+      all_words: {"de": allwords_de, "en": allwords_en} as { "de": string[],"en": string[]},
       solution: "",
       currentRound: 0, // counting how many images have been shown in this game already
       startTime: 0, // time when a game starts
@@ -170,9 +171,9 @@ export default defineComponent({
   methods: {
     getRandomWords(arr: string[]): string[] {
       return [...arr]
-          .filter(word => word.length <= this.max_characters)
-          .sort(() => 0.5 - Math.random())
-          .slice(0, this.rounds);
+        .filter(word => word.length <= this.max_characters)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, this.rounds);
     },
     nextRound() {
       let actual_solution = [...this.words[this.currentRound]].reverse().join("");
@@ -212,7 +213,8 @@ export default defineComponent({
     start() {
       this.currentRound = 0;
       this.score = 0;
-      this.words = this.getRandomWords(allwords);
+      const local_index = this.$i18n.locale as keyof typeof this.all_words;
+      this.words = this.getRandomWords(this.all_words[local_index]);
       this.solution = "";
       this.startTime = performance.now();
     },

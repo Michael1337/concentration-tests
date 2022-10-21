@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import CTWeber from "@/components/CTWeber.vue";
 export default {
   components: {CTWeber}

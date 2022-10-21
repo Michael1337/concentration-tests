@@ -14,7 +14,7 @@
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            :aria-label="$t('general.toggle_navigation')"
           >
             <span class="navbar-toggler-icon" />
           </button>
@@ -52,6 +52,8 @@
 import {computed, reactive} from 'vue';
 import {useRoute} from "vue-router";
 import LocaleChanger from "@/components/LocaleChanger.vue";
+import { useHead } from "@vueuse/head";
+import { useI18n } from 'vue-i18n'
 
 const allRoutes: { path: string, key: string }[] = reactive([
   {"path": "/", "key": "home"},
@@ -60,6 +62,23 @@ const allRoutes: { path: string, key: string }[] = reactive([
   {"path": "/wordsbackwards", "key": "wordsbackwards"},
 ]);
 const currentRoute = computed(() => useRoute().path)
+const { t } = useI18n()
+
+const siteData = reactive({
+  title: computed(() => t("general.title")),
+  description: computed(() => t("general.description")),
+})
+
+useHead({
+  // Can be static or computed
+  title: () => siteData.title,
+  meta: [
+    {
+      name: `description`,
+      content: () => siteData.description,
+    },
+  ],
+})
 
 </script>
 

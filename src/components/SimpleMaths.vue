@@ -245,8 +245,8 @@ export default defineComponent({
       this.all_terms.forEach((round, r_index) => {
         round.forEach((term, t_index) => {
           const actual = term.reduce(
-              (previousValue, currentValue) => previousValue + currentValue,
-              0
+            (previousValue, currentValue) => previousValue + currentValue,
+            0
           );
           if(this.solutions[r_index][t_index] === actual) this.score++;
         })

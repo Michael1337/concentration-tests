@@ -1,13 +1,12 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <HelloWorld msg="Test" />
+    <HomePage />
   </div>
 </template>
 
-<script>
-import HelloWorld from "@/components/HomePage.vue";
+<script lang="ts">
+import HomePage from "@/components/HomePage.vue";
 export default {
-  components: {HelloWorld}
+  components: {HomePage},
 }
 </script>
