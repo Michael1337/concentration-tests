@@ -43,7 +43,7 @@
   },
   "simplemaths": {
     "title": "Kopfrechnen",
-    "instructions_1": "Gib an, wie viele Durchgänge zu spielen möchtest und wie viele Terme in jedem Durchgang auf einmal angezeigt werden sollen.",
+    "instructions_1": "Gib an, wie viele Durchgänge du spielen möchtest und wie viele Terme in jedem Durchgang auf einmal angezeigt werden sollen.",
     "instructions_2": "Gib zusätzlich an, aus wie vielen Zahlen jeder Term bestehen soll und wie groß die einzelnen Summanden höchstens sein dürfen.",
     "instructions_3": "Für jeden richtig gelösten Term bekommst du einen Punkt.",
     "instructions_4": "Im Hintergrund wird die Zeit gestoppt. Mit der Tab-Taste kannst du schnell durch die einzelnen Terme schalten.",
